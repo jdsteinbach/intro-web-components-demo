@@ -1,0 +1,62 @@
+:host {
+  display: block;
+}
+
+.fizzbuzz {
+  margin: 2rem 0;
+  display: grid;
+  grid-template:
+    "count count" auto
+    "fizz buzz" auto /
+    1fr 1fr;
+  color: transparent;
+
+  &::before,
+  &::after {
+    content: "\00A0";
+    padding: .5rem;
+    display: block;
+    font-weight: 900;
+    text-align: center;
+    outline: .25rem solid currentColor;
+    outline-offset: -.25rem;
+  }
+}
+
+.fizzbuzz__count {
+  margin: 0 0 1rem;
+  grid-area: count;
+  color: #263238;
+}
+
+.fizz::before {
+  content: "FIZZ!";
+  grid-area: fizz;
+  color: #E65100;
+}
+
+.buzz::after {
+  content: "BUZZ!";
+  grid-area: buzz;
+  color: #0D47A1;
+}
+
+button {
+  margin-right: 1em;
+  padding: 0 1em;
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: .0625em;
+  color: #FFF;
+  border: 0;
+  background-color: #1E88E5;
+  transition: background-color .2s;
+
+  &:hover,
+  &:active {
+    background-color: #0D47A1;
+  }
+}

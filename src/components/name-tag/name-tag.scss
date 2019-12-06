@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+p {
+  margin: 1em auto;
+  padding: 1em 0 0;
+  display: block;
+  overflow: hidden;
+  font-weight: 700;
+  color: #FFF;
+  text-align: center;
+  border-radius: .5em;
+  background-color: var(--name-tag-bg, #C62828);
+  box-shadow: 0 0 .5em #263238;
+}
+
+.hello {
+  padding-left: .25em;
+  display: block;
+  font-size: 2em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+}
+
+.name {
+  margin: 2rem 0 1rem;
+  padding: .5em;
+  display: block;
+  font-size: 4em;
+  font-weight: 400;
+  font-family: "Marker Felt", fantasy;
+  color: var(--name-tag-marker-color, #263238);
+  background-color: #FFF;
+}

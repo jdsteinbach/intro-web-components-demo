@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+button {
+  margin-top: 1em;
+  padding: 0 1em;
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: .0625em;
+  color: #FFF;
+  border: 0;
+  background-color: #1E88E5;
+  transition: background-color .2s;
+
+  &:hover,
+  &:active {
+    background-color: #0D47A1;
+  }
+}

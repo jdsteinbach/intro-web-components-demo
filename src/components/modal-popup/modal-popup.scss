@@ -1,0 +1,126 @@
+:host {
+  display: grid;
+  grid-template:
+    "contents" 100vh / 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: var(--modal-pointer-events, initial);
+}
+
+:host([aria-hidden="true"]) {
+  --modal-opacity: 0;
+  --modal-scale: 0;
+  --modal-translateY: 25%;
+  --modal-scrim-opacity: 0;
+  --modal-pointer-events: none;
+}
+
+.modal-scrim {
+  display: block;
+  grid-area: contents;
+  position: relative;
+  z-index: 1;
+  font-size: 0;
+  border: 0;
+  background-color: #37474F;
+  transition: opacity .2s;
+  pointer-events: var(--modal-pointer-events, initial);
+  opacity: var(--modal-scrim-opacity, .85);
+
+  &:hover,
+  &:active {
+    --modal-scrim-opacity: .95;
+  }
+}
+
+.modal {
+  max-width: 40rem;
+  grid-area: contents;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  z-index: 2;
+  transform: translateY(var(--modal-translateY, 0)) scale(var(--modal-scale, 1));
+  color: #37474F;
+  background: #FFF;
+  border-radius: .25rem;
+  box-shadow: 0 .25rem 1rem -.5rem #37474F;
+  transition: transform .2s, opacity .2s;
+  pointer-events: var(--modal-pointer-events, initial);
+  opacity: var(--modal-opacity, 1);
+}
+
+.modal__header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #CFD8DC;
+}
+
+.modal__title {
+  margin: 0;
+}
+
+.modal__header-close {
+  margin-left: 1em;
+  padding: 0 1em;
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0;
+  text-transform: uppercase;
+  letter-spacing: .0625em;
+  color: #1E88E5;
+  border: 0;
+  background-color: transparent;
+  transition: background-color .2s;
+
+  &::before {
+    content: "\00D7";
+    font-size: 3rem;
+  }
+
+  &:hover,
+  &:active {
+    color: #0D47A1;
+  }
+}
+
+
+.modal__content {
+  padding: 2rem;
+}
+
+p {
+  margin: 0;
+}
+
+.modal__footer {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #CFD8DC;
+}
+
+.modal__footer-close {
+  padding: 0 1em;
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: .0625em;
+  color: #FFF;
+  border: 0;
+  background-color: #1E88E5;
+  transition: background-color .2s;
+
+  &:hover,
+  &:active {
+    background-color: #0D47A1;
+  }
+}
